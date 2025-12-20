@@ -109,12 +109,18 @@ const Hero = () => {
           style={{ x: mousePosition.x, y: mousePosition.y }}
           className="relative w-full flex justify-center lg:justify-end lg:pr-12 order-first lg:order-last mb-12 lg:mb-0"
         >
-          <div className="relative z-10 w-full max-w-[320px] md:max-w-[400px] lg:max-w-[480px] aspect-[4/5] rounded-[48px] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_80px_rgba(0,242,255,0.1)] group">
+          <div 
+            className="relative z-10 w-full max-w-[350px] md:max-w-[450px] lg:max-w-[550px] aspect-square transition-all duration-700 pointer-events-none"
+            style={{
+              maskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
+              WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
+            }}
+          >
             <motion.img 
               src={hero}
               alt="Shuvo Mallik" 
-              style={{ scale: 1.1, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
-              className="w-full h-full object-cover transition-transform duration-700 pointer-events-none"
+              style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
+              className="w-full h-full object-contain transition-transform duration-700 pointer-events-none"
             />
           </div>
           {/* Decorative Elements */}

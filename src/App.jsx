@@ -9,10 +9,14 @@ import Contact from './components/Contact';
 
 import Noise from './components/Noise';
 import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 import Lenis from 'lenis';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  const [isLoading, setIsLoading] = React.useState(true);
+
   React.useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
@@ -38,10 +42,14 @@ function App() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-slate-950">
+      <AnimatePresence mode="wait">
+        {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+      
       <Noise />
-      <Navbar />
+      <Navbar show={!isLoading} />
       <main>
-        <Hero />
+        <Hero show={!isLoading} />
         <About />
         <Skills />
         <Projects />

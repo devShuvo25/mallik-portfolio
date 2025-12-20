@@ -43,12 +43,29 @@ const WhyMe = () => {
             key={idx}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
+            animate={{
+              y: [0, -15, 0],
+            }}
+            transition={{ 
+              y: {
+                duration: 8, // Doubled duration for maximum smoothness
+                repeat: Infinity,
+                ease: [0.45, 0, 0.55, 1],
+                delay: idx * 0.4 // More spread out stagger
+              },
+              opacity: { duration: 1, delay: idx * 0.15 },
+              x: { duration: 1, delay: idx * 0.15 }
+            }}
             viewport={{ once: true }}
-            className="glass-card p-8 md:p-12 hover:bg-white/10 transition-colors border-white/5"
+            whileHover={{ 
+              y: -8,
+              scale: 1.05,
+              transition: { duration: 0.4 } 
+            }}
+            className="glass-card p-8 md:p-12 transition-colors border-white/5 group hover:bg-white/10"
           >
-            <div className="mb-10">{reason.icon}</div>
-            <h3 className="text-lg font-black mb-6 tracking-tighter uppercase font-display">{reason.title}</h3>
+            <div className="mb-10 group-hover:scale-110 transition-transform duration-700">{reason.icon}</div>
+            <h3 className="text-lg font-black mb-6 tracking-tighter uppercase font-display group-hover:text-accent transition-colors">{reason.title}</h3>
             <p className="text-slate-400 font-bold text-xs uppercase tracking-widest leading-loose">
               {reason.description}
             </p>

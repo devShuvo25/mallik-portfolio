@@ -103,28 +103,75 @@ const Skills = () => {
           </motion.div>
         </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+      <motion.div 
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          duration: 12, // Very slow collective float
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8"
+      >
         {skills.map((skill, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            whileInView={{ 
+              opacity: 1, 
+              y: 0, 
+              filter: "blur(0px)",
+            }}
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 1, 0, -1, 0],
+              x: [0, 5, 0, -5, 0],
+            }}
             transition={{ 
-              duration: 0.8, 
-              delay: idx * 0.05,
-              ease: [0.16, 1, 0.3, 1]
+              y: {
+                duration: 10, // Increased for buttery smoothness
+                repeat: Infinity,
+                ease: [0.45, 0, 0.55, 1],
+                delay: idx * 0.4
+              },
+              rotate: {
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: idx * 0.5
+              },
+              x: {
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: idx * 0.3
+              },
+              opacity: { duration: 1.5, delay: idx * 0.1 },
+              filter: { duration: 1.5, delay: idx * 0.1 }
             }}
             viewport={{ once: true, margin: "-5%" }}
             whileHover={{ 
-              y: -15,
-              scale: 1.02,
-              transition: { duration: 0.4, ease: "easeOut" }
+              y: -5,
+              scale: 1.05,
+              transition: { duration: 0.5, ease: "easeOut" }
             }}
             className="glass-card p-8 md:p-12 flex flex-col items-center justify-center gap-6 md:gap-8 group hover:bg-white/[0.08] border-white/5 transition-all relative overflow-hidden rounded-[2rem] md:rounded-[3rem]"
           >
             <div className="relative z-10 p-3 md:p-6 bg-white/5 rounded-xl md:rounded-[2rem] group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-500 shadow-2xl overflow-hidden">
                {/* Internal Glow on Hover */}
-               <div className="absolute inset-0 bg-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+               <motion.div 
+                 animate={{
+                   opacity: [0, 0.5, 0],
+                   scale: [0.8, 1.2, 0.8]
+                 }}
+                 transition={{
+                   duration: 3,
+                   repeat: Infinity,
+                   ease: "easeInOut"
+                 }}
+                 className="absolute inset-0 bg-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+               />
               <div className="relative z-10">
                 {skill.icon}
               </div>
@@ -137,7 +184,7 @@ const Skills = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

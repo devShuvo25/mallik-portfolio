@@ -13,33 +13,43 @@ const Footer = () => {
   return (
     <footer className="bg-slate-950 border-t border-white/5 py-12">
       <div className="section-padding flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex flex-col items-center md:items-start">
+        <motion.div 
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center md:items-start"
+        >
           <h3 className="text-xl font-black text-white tracking-tighter font-display">
             SHUVO MALLIK<span className="text-accent">.</span>
           </h3>
           <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em] mt-1">
             Full Stack Web Developer
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex items-center gap-6">
           {socialLinks.map((link, idx) => (
-            <a 
+            <motion.a 
               key={idx}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-accent transition-colors"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 }}
+              className="text-slate-500 hover:text-accent transition-colors block"
             >
               {link.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
 
-        <div className="flex flex-col items-center md:items-end text-[10px] font-bold text-slate-500 uppercase tracking-widest gap-2">
+        <motion.div 
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="flex flex-col items-center md:items-end text-[10px] font-bold text-slate-500 uppercase tracking-widest gap-2"
+        >
           <span>MADE BY SHUVO</span>
           <span>© {new Date().getFullYear()} ALL RIGHTS RESERVED</span>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

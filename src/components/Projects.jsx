@@ -52,9 +52,21 @@ const Projects = () => {
             key={idx}
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            animate={{
+              y: [0, -25, 0],
+            }}
+            transition={{ 
+              y: {
+                duration: 10, // Significantly increased for a slow "float"
+                repeat: Infinity,
+                ease: [0.45, 0, 0.55, 1],
+                delay: idx * 0.6
+              },
+              opacity: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+              initialY: { duration: 1.5, ease: [0.16, 1, 0.3, 1] }
+            }}
             viewport={{ once: true, margin: "-10%" }}
-            className="grid lg:grid-cols-12 gap-12 items-center"
+            className="grid lg:grid-cols-12 gap-12 items-center group"
           >
             <div 
               onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}

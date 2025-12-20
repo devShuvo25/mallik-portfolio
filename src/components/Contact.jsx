@@ -27,11 +27,20 @@ const Contact = () => {
               { label: 'GITHUB', value: 'github.com/shuvomallik', icon: <Github size={20} />, href: 'https://github.com/devShuvo25' },
             ].map((item, i) => (
               item.href ? (
-                <a 
+                <motion.a 
                   key={i} 
                   href={item.href}
                   target={item.label === 'EMAIL' ? '_self' : '_blank'}
                   rel="noopener noreferrer"
+                  animate={{
+                    y: [0, -5, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.4
+                  }}
                   className="flex items-center gap-4 md:gap-8 group cursor-pointer"
                 >
                   <div className="text-accent group-hover:scale-125 transition-transform shrink-0">
@@ -45,7 +54,7 @@ const Contact = () => {
                       {item.value}
                     </p>
                   </div>
-                </a>
+                </motion.a>
               ) : (
                 <div key={i} className="flex items-center gap-4 md:gap-8">
                   <div className="text-accent shrink-0">
@@ -68,7 +77,18 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          animate={{
+            y: [0, -15, 0],
+          }}
+          transition={{ 
+            y: {
+              duration: 12, // Very slow, luxurious float
+              repeat: Infinity,
+              ease: [0.45, 0, 0.55, 1],
+            },
+            opacity: { duration: 1.2 },
+            scale: { duration: 1.2 }
+          }}
           viewport={{ once: true }}
           className="glass-card p-8 md:p-20 shadow-none border-white/5 bg-white/[0.02]"
         >
@@ -97,9 +117,15 @@ const Contact = () => {
                 className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 outline-none focus:border-accent transition-colors text-lg md:text-xl font-bold font-sans resize-none"
               ></textarea>
             </div>
-            <button className="btn-premium w-full mt-8 md:mt-12 hover:scale-[1.02] active:scale-95 transition-all">
+            <motion.button 
+              animate={{ 
+                boxShadow: ["0 0 0 0px rgba(0, 242, 255, 0)", "0 0 0 10px rgba(0, 242, 255, 0.1)", "0 0 0 0px rgba(0, 242, 255, 0)"] 
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="btn-premium w-full mt-8 md:mt-12 hover:scale-[1.02] active:scale-95 transition-all"
+            >
               SEND MESSAGE
-            </button>
+            </motion.button>
           </form>
         </motion.div>
       </div>

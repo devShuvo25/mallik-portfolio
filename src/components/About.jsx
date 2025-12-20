@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Lightbulb, Zap, Rocket } from 'lucide-react';
+import { Globe, Lightbulb, Zap, Rocket, GraduationCap } from 'lucide-react';
 
 const About = () => {
   return (
@@ -26,6 +26,28 @@ const About = () => {
               FULLY EQUIPPED FOR GLOBAL REMOTE COLLABORATION.
             </p>
           </div>
+
+          <div className="mt-12 pt-10 border-t border-white/5">
+            <h4 className="text-[10px] font-black tracking-[0.4em] text-accent uppercase mb-6 flex items-center gap-3">
+              <GraduationCap size={14} /> EDUCATION
+            </h4>
+            <div className="space-y-3">
+              <div>
+                <p className="text-white font-black text-sm md:text-md tracking-tighter uppercase font-display">
+                  Bachelor of Urban and Regional Planning
+                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
+                  <p className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                    KUET, Khulna, Bangladesh
+                  </p>
+                  <span className="hidden sm:block w-1 h-1 bg-white/20 rounded-full" />
+                  <p className="text-accent/60 text-[10px] font-black tracking-widest uppercase">
+                    2024 - PRESENT
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -41,9 +63,25 @@ const About = () => {
                key={idx} 
                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-               transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+               animate={{
+                 y: [0, -15, 0],
+               }}
+               transition={{ 
+                 y: {
+                   duration: 8 + idx, // Increased for a slower, breathable feel
+                   repeat: Infinity,
+                   ease: [0.45, 0, 0.55, 1],
+                   delay: idx * 0.4
+                 },
+                 opacity: { duration: 1, delay: idx * 0.15 },
+                 filter: { duration: 1, delay: idx * 0.15 }
+               }}
                viewport={{ once: true }}
-               whileHover={{ y: -10, transition: { duration: 0.3 } }}
+               whileHover={{ 
+                 y: -10, 
+                 scale: 1.05,
+                 transition: { duration: 0.4 } 
+               }}
                className="glass-card p-8 md:p-10 flex flex-col items-start text-left group hover:bg-white/[0.05] transition-all rounded-[3rem] border-white/5"
             >
               <div className="mb-6 md:mb-8 p-3 md:p-4 bg-white/5 rounded-2xl group-hover:bg-accent/10 transition-colors duration-500">{item.icon}</div>

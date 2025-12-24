@@ -11,17 +11,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-950 border-t border-white/5 py-12">
+    <footer className="py-12" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>
       <div className="section-padding flex flex-col md:flex-row items-center justify-between gap-8">
         <motion.div 
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center md:items-start"
         >
-          <h3 className="text-xl font-black text-white tracking-tighter font-display">
-            SHUVO MALLIK<span className="text-accent">.</span>
+          <h3 className="text-xl font-black tracking-tighter font-display" style={{ color: 'var(--text-primary)' }}>
+            SHUVO MALLIK<span style={{ color: 'var(--accent-color)' }}>.</span>
           </h3>
-          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em] mt-1">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] mt-1" style={{ color: 'var(--text-tertiary)' }}>
             Full Stack Web Developer
           </p>
         </motion.div>
@@ -35,7 +35,10 @@ const Footer = () => {
               rel="noopener noreferrer"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 }}
-              className="text-slate-500 hover:text-accent transition-colors block"
+              className="transition-colors block"
+              style={{ color: 'var(--text-tertiary)' }}
+              onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'}
+              onMouseLeave={(e) => e.target.style.color = 'var(--text-tertiary)'}
             >
               {link.icon}
             </motion.a>
@@ -45,7 +48,8 @@ const Footer = () => {
         <motion.div 
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          className="flex flex-col items-center md:items-end text-[10px] font-bold text-slate-500 uppercase tracking-widest gap-2"
+          className="flex flex-col items-center md:items-end text-[10px] font-bold uppercase tracking-widest gap-2"
+          style={{ color: 'var(--text-tertiary)' }}
         >
           <span>MADE BY SHUVO</span>
           <span>© {new Date().getFullYear()} ALL RIGHTS RESERVED</span>

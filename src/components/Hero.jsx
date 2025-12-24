@@ -88,20 +88,27 @@ const Hero = ({ show }) => {
         >
           <motion.span 
             variants={itemVariants} 
-            className="text-[10px] md:text-sm font-black tracking-[0.5em] text-accent uppercase mb-6 block border border-accent/20 py-2 px-6 rounded-full bg-accent/2 w-fit mx-auto lg:mx-0"
+            className="text-[10px] md:text-sm font-black tracking-[0.5em] uppercase mb-6 block py-2 px-6 rounded-full w-fit mx-auto lg:mx-0"
+            style={{
+              color: 'var(--accent-color)',
+              border: '1px solid var(--accent-color)',
+              opacity: 0.8,
+              backgroundColor: 'var(--glass-bg)',
+            }}
           >
             Full Stack Web Developer
           </motion.span>
           
           <motion.div variants={itemVariants} className="mb-8 w-full max-w-full overflow-hidden">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter mb-4 text-gradient font-display break-words">
-              SHUVO <br /> MALLIK<span className="text-accent">.</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter mb-4 font-display break-words" style={{ color: 'var(--text-primary)' }}>
+              SHUVO <br /> MALLIK<span style={{ color: 'var(--accent-color)' }}>.</span>
             </h1>
           </motion.div>
 
           <motion.p 
             variants={itemVariants}
-            className="text-base md:text-lg font-medium text-slate-400 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed uppercase tracking-widest"
+            className="text-base md:text-lg font-medium mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed uppercase tracking-widest"
+            style={{ color: 'var(--text-tertiary)' }}
           >
             Developing high-performance, responsive <br className="hidden md:block" /> MERN stack applications for the global market.
           </motion.p>
@@ -128,14 +135,26 @@ const Hero = ({ show }) => {
               <a 
                 href="https://drive.google.com/file/d/1skRkwiRIw-UZcK8Quc59kwqYcZL4OE8h/view?usp=drive_link" 
                 download 
-                className="px-8 py-5 border border-white/10 rounded-full text-xs font-black tracking-[0.2em] uppercase hover:bg-white/5 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                className="px-8 py-5 rounded-full text-xs font-black tracking-[0.2em] uppercase transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+                style={{
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-primary)',
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--glass-bg)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
               >
                 RESUME <Download size={16} />
               </a>
             </Magnetic>
 
             <Magnetic strength={0.4}>
-              <a href="#contact" className="text-xs font-black tracking-[0.2em] uppercase hover:text-accent transition-colors flex items-center gap-2 group whitespace-nowrap">
+              <a 
+                href="#contact" 
+                className="text-xs font-black tracking-[0.2em] uppercase transition-colors flex items-center gap-2 group whitespace-nowrap"
+                style={{ color: 'var(--text-primary)' }}
+                onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'}
+                onMouseLeave={(e) => e.target.style.color = 'var(--text-primary)'}
+              >
                 CONTACT <Mail size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </Magnetic>
@@ -160,7 +179,7 @@ const Hero = ({ show }) => {
             <motion.img 
               src='https://i.ibb.co.com/pjgnfm26/Whats-App-Image-2025-12-21-at-15-18-34-937867e5-removebg-preview.png'
               alt="Shuvo Mallik" 
-              style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
+              // style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
               className="w-full h-full object-contain transition-transform duration-700 pointer-events-none"
             />
           </div>
@@ -193,7 +212,7 @@ const Hero = ({ show }) => {
       </div>
 
       {/* Subtle Bottom Accent */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px" style={{ background: 'linear-gradient(to right, transparent, var(--border-color), transparent)' }} />
     </section>
   );
 };

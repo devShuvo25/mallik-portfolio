@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-slate-950">
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <AnimatePresence mode="wait">
         {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
       </AnimatePresence>

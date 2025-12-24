@@ -16,7 +16,8 @@ const Loader = ({ onLoadingComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-[100] bg-slate-950 flex items-center justify-center"
+      className="fixed inset-0 z-[100] flex items-center justify-center"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       <div className="relative flex flex-col items-center">
         {/* Animated Rings */}

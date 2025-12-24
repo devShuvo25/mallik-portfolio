@@ -12,36 +12,36 @@ const About = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl lg:text-5xl font-black mb-8 text-gradient uppercase font-display break-words tracking-tighter">
-            ABOUT<span className="text-accent">/</span>ME<span className="text-accent">.</span>
+          <h2 className="text-xl md:text-2xl lg:text-5xl font-black mb-8 uppercase font-display break-words tracking-tighter" style={{ color: 'var(--text-primary)' }}>
+            ABOUT<span style={{ color: 'var(--accent-color)' }}>/</span>ME<span style={{ color: 'var(--accent-color)' }}>.</span>
           </h2>
-          <div className="space-y-6 md:space-y-10 text-base md:text-xl text-slate-400 leading-relaxed font-medium uppercase tracking-widest">
+          <div className="space-y-6 md:space-y-10 text-base md:text-xl leading-relaxed font-medium uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
             <p>
               I BUILD DIGITAL EXPERIENCES THAT MERGE FUNCTIONALITY WITH CUTTING-EDGE DESIGN. AS A FULL STACK DEVELOPER, MY FOCUS IS ON CREATING SCALABLE APPLICATIONS THAT DELIVER PERFORMANCE AND VALUE.
             </p>
             <p>
               SPECIALIZED IN THE MERN STACK, I THRIVE IN BRIDGING THE GAP BETWEEN COMPLEX BACKEND ARCHITECTURE AND SEAMLESS USER INTERFACES.
             </p>
-            <p className="border-l-4 border-accent pl-6 md:pl-8 py-3 text-white font-black bg-white/5 rounded-r-2xl">
+            <p className="pl-6 md:pl-8 py-3 font-black rounded-r-2xl" style={{ borderLeft: '4px solid var(--accent-color)', color: 'var(--text-primary)', backgroundColor: 'var(--glass-bg)' }}>
               FULLY EQUIPPED FOR GLOBAL REMOTE COLLABORATION.
             </p>
           </div>
 
-          <div className="mt-12 pt-10 border-t border-white/5">
-            <h4 className="text-[10px] font-black tracking-[0.4em] text-accent uppercase mb-6 flex items-center gap-3">
+          <div className="mt-12 pt-10" style={{ borderTop: '1px solid var(--border-color)' }}>
+            <h4 className="text-[10px] font-black tracking-[0.4em] uppercase mb-6 flex items-center gap-3" style={{ color: 'var(--accent-color)' }}>
               <GraduationCap size={14} /> EDUCATION
             </h4>
             <div className="space-y-3">
               <div>
-                <p className="text-white font-black text-sm md:text-md tracking-tighter uppercase font-display">
+                <p className="font-black text-sm md:text-md tracking-tighter uppercase font-display" style={{ color: 'var(--text-primary)' }}>
                   Bachelor of Urban and Regional Planning
                 </p>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                  <p className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
                     KUET, Khulna, Bangladesh
                   </p>
-                  <span className="hidden sm:block w-1 h-1 bg-white/20 rounded-full" />
-                  <p className="text-accent/60 text-[10px] font-black tracking-widest uppercase">
+                  <span className="hidden sm:block w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--border-color)' }} />
+                  <p className="text-[10px] font-black tracking-widest uppercase" style={{ color: 'var(--accent-color)', opacity: 0.6 }}>
                     2024 - PRESENT
                   </p>
                 </div>
@@ -54,10 +54,10 @@ const About = () => {
           className="grid grid-cols-1 sm:grid-cols-2 gap-8 h-full"
         >
           {[
-            { icon: <Globe className="w-8 h-8 text-accent" />, title: 'GLOBAL READY', desc: 'Remote collaboration across time zones' },
-            { icon: <Zap className="w-8 h-8 text-accent" />, title: 'FAST ADAPTATION', desc: 'Swiftly mastering new tech ecosystems' },
-            { icon: <Lightbulb className="w-8 h-8 text-accent" />, title: 'PROBLEM FIXER', desc: 'Elegant solutions for complex logic' },
-            { icon: <Rocket className="w-8 h-8 text-accent" />, title: 'RESULT DRIVEN', desc: 'Delivering production-grade excellence' },
+            { icon: <Globe className="w-8 h-8" style={{ color: 'var(--accent-color)' }} />, title: 'GLOBAL READY', desc: 'Remote collaboration across time zones' },
+            { icon: <Zap className="w-8 h-8" style={{ color: 'var(--accent-color)' }} />, title: 'FAST ADAPTATION', desc: 'Swiftly mastering new tech ecosystems' },
+            { icon: <Lightbulb className="w-8 h-8" style={{ color: 'var(--accent-color)' }} />, title: 'PROBLEM FIXER', desc: 'Elegant solutions for complex logic' },
+            { icon: <Rocket className="w-8 h-8" style={{ color: 'var(--accent-color)' }} />, title: 'RESULT DRIVEN', desc: 'Delivering production-grade excellence' },
           ].map((item, idx) => (
             <motion.div 
                key={idx} 
@@ -82,11 +82,17 @@ const About = () => {
                  scale: 1.05,
                  transition: { duration: 0.4 } 
                }}
-               className="glass-card p-8 md:p-10 flex flex-col items-start text-left group hover:bg-white/[0.05] transition-all rounded-[3rem] border-white/5"
+               className="p-8 md:p-10 flex flex-col items-start text-left group transition-all rounded-[3rem]"
+               style={{
+                 backgroundColor: 'var(--glass-bg)',
+                 backdropFilter: 'blur(12px)',
+                 border: '1px solid var(--glass-border)',
+               }}
+               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--glass-bg)'}
             >
-              <div className="mb-6 md:mb-8 p-3 md:p-4 bg-white/5 rounded-2xl group-hover:bg-accent/10 transition-colors duration-500">{item.icon}</div>
-              <h3 className="font-black text-white text-md mb-3 md:mb-4 tracking-tighter uppercase font-display break-words group-hover:text-accent transition-colors">{item.title}</h3>
-              <p className="text-[10px] md:text-sm text-slate-400 font-bold uppercase tracking-[0.2em] leading-loose">{item.desc}</p>
+              <div className="mb-6 md:mb-8 p-3 md:p-4 rounded-2xl group-hover:bg-accent/10 transition-colors duration-500" style={{ backgroundColor: 'var(--glass-bg)' }}>{item.icon}</div>
+              <h3 className="font-black text-md mb-3 md:mb-4 tracking-tighter uppercase font-display break-words group-hover:text-accent transition-colors" style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
+              <p className="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] leading-loose" style={{ color: 'var(--text-tertiary)' }}>{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>

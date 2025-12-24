@@ -86,7 +86,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding py-24 md:py-32 border-t border-white/5 bg-slate-950">
+    <section id="skills" className="section-padding py-24 md:py-32" style={{ borderTop: '1px solid var(--border-color)', backgroundColor: 'var(--bg-primary)' }}>
       <div className="mb-16 md:mb-24">
           <motion.div
              initial={{ opacity: 0, y: 30 }}
@@ -94,10 +94,10 @@ const Skills = () => {
              viewport={{ once: true }}
              transition={{ duration: 0.8 }}
           >
-            <h2 className="text-xl md:text-2xl lg:text-5xl font-black mb-6 md:mb-8 text-gradient uppercase font-display tracking-tighter">
-              SKILLS<span className="text-accent">.</span>
+            <h2 className="text-xl md:text-2xl lg:text-5xl font-black mb-6 md:mb-8 uppercase font-display tracking-tighter" style={{ color: 'var(--text-primary)' }}>
+              SKILLS<span style={{ color: 'var(--accent-color)' }}>.</span>
             </h2>
-            <p className="text-base md:text-lg text-slate-400 font-bold uppercase tracking-[0.4em]">
+            <p className="text-base md:text-lg font-bold uppercase tracking-[0.4em]" style={{ color: 'var(--text-tertiary)' }}>
               OFFICIAL TOOLS OF THE TRADE.
             </p>
           </motion.div>
@@ -156,9 +156,14 @@ const Skills = () => {
               scale: 1.05,
               transition: { duration: 0.5, ease: "easeOut" }
             }}
-            className="glass-card p-8 md:p-12 flex flex-col items-center justify-center gap-6 md:gap-8 group hover:bg-white/[0.08] border-white/5 transition-all relative overflow-hidden rounded-[2rem] md:rounded-[3rem]"
+            className="p-8 md:p-12 flex flex-col items-center justify-center gap-6 md:gap-8 group transition-all relative overflow-hidden rounded-[2rem] md:rounded-[3rem]"
+            style={{
+              backgroundColor: 'var(--glass-bg)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid var(--glass-border)',
+            }}
           >
-            <div className="relative z-10 p-3 md:p-6 bg-white/5 rounded-xl md:rounded-[2rem] group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-500 shadow-2xl overflow-hidden">
+            <div className="relative z-10 p-3 md:p-6 rounded-xl md:rounded-[2rem] group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-500 shadow-2xl overflow-hidden" style={{ backgroundColor: 'var(--glass-bg)' }}>
                {/* Internal Glow on Hover */}
                <motion.div 
                  animate={{
@@ -176,7 +181,7 @@ const Skills = () => {
                 {skill.icon}
               </div>
             </div>
-            <h3 className="relative z-10 text-[10px] md:text-xs font-black text-slate-400 group-hover:text-white text-center tracking-widest uppercase font-display transition-colors break-words">
+            <h3 className="relative z-10 text-[10px] md:text-xs font-black text-center tracking-widest uppercase font-display transition-colors break-words" style={{ color: 'var(--text-tertiary)' }} onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-tertiary)'}>
               {skill.name}
             </h3>
             

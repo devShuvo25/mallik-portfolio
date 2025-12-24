@@ -31,9 +31,44 @@
   --font-sans: "Inter", "system-ui", sans-serif;
 }
 
+/* Dark Theme (Default) */
+.dark {
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #1a1a1b;
+  --bg-tertiary: #2a2a2b;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #00F2FF;
+  --accent-secondary: #00d4ff;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --noise-opacity: 0.05;
+}
+
+/* Light Theme - Optimized for Maximum Visibility */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #0a0a0a;
+  --text-secondary: #2d3748;
+  --text-tertiary: #4a5568;
+  --border-color: rgba(0, 0, 0, 0.15);
+  --accent-color: #0284c7;
+  --accent-secondary: #0369a1;
+  --glass-bg: rgba(248, 249, 250, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --noise-opacity: 0.02;
+}
+
 body {
-  @apply antialiased text-white bg-slate-950 transition-colors duration-300 overflow-x-hidden;
+  @apply antialiased overflow-x-hidden;
   font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Noise/Grain Effect */
@@ -48,7 +83,7 @@ body {
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: .05;
+  opacity: var(--noise-opacity);
   visibility: visible;
   z-index: 1000;
   pointer-events: none;

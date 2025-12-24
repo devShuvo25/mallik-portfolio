@@ -29,7 +29,7 @@ const Projects = () => {
   const [activeIdx, setActiveIdx] = React.useState(null);
 
   return (
-    <section id="projects" className="section-padding py-24 md:py-32 border-t border-white/5">
+    <section id="projects" className="section-padding py-24 md:py-32" style={{ borderTop: '1px solid var(--border-color)' }}>
       <div className="mb-16 md:mb-24">
           <motion.div
              initial={{ opacity: 0, y: 20 }}
@@ -37,10 +37,10 @@ const Projects = () => {
              viewport={{ once: true }}
              transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mb-4 md:mb-6 text-gradient uppercase font-display break-words tracking-tighter">
-              WORK<span className="text-accent">.</span>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-black mb-4 md:mb-6 uppercase font-display break-words tracking-tighter" style={{ color: 'var(--text-primary)' }}>
+              WORK<span style={{ color: 'var(--accent-color)' }}>.</span>
             </h2>
-            <p className="text-base md:text-lg text-slate-400 font-bold uppercase tracking-[0.3em]">
+            <p className="text-base md:text-lg font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--text-tertiary)' }}>
               SELECTED PROJECTS DELIVERING HIGH VALUE.
             </p>
           </motion.div>
@@ -70,7 +70,8 @@ const Projects = () => {
           >
             <div 
               onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
-              className="group lg:col-span-7 relative aspect-video overflow-hidden rounded-[2rem] md:rounded-[3rem] cursor-pointer bg-white/5 border border-white/5"
+              className="group lg:col-span-7 relative aspect-video overflow-hidden rounded-[2rem] md:rounded-[3rem] cursor-pointer"
+              style={{ backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}
             >
               <motion.img
                 src={project.image}
@@ -119,15 +120,15 @@ const Projects = () => {
             <div className="lg:col-span-5 space-y-10">
               <div className="flex gap-4">
                 {project.tech.map((t) => (
-                  <span key={t} className="text-[10px] font-bold tracking-widest text-slate-500 uppercase px-4 py-1.5 bg-white/5 border border-white/5 rounded-full group-hover:border-accent/20 group-hover:text-accent transition-all duration-500">
+                  <span key={t} className="text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full group-hover:border-accent/20 group-hover:text-accent transition-all duration-500" style={{ color: 'var(--text-tertiary)', backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}>
                     {t}
                   </span>
                 ))}
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white group-hover:text-accent transition-colors leading-[1.1] tracking-tighter font-display break-words">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black group-hover:text-accent transition-colors leading-[1.1] tracking-tighter font-display break-words" style={{ color: 'var(--text-primary)' }}>
                 {project.title}
               </h3>
-              <p className="text-slate-400 font-bold text-xs md:text-sm uppercase tracking-[0.2em] leading-loose max-w-md">
+              <p className="font-bold text-xs md:text-sm uppercase tracking-[0.2em] leading-loose max-w-md" style={{ color: 'var(--text-tertiary)' }}>
                 {project.description}
               </p>
               

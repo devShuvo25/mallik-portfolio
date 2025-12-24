@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Noise from './components/Noise';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import Stars from './components/Stars';
 
 import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
@@ -46,6 +47,7 @@ function App() {
         {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
       
+      <Stars />
       <Noise />
       <Navbar show={!isLoading} />
       <main>

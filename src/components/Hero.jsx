@@ -158,7 +158,7 @@ const Hero = ({ show }) => {
             }}
           >
             <motion.img 
-              src={hero}
+              src='https://i.ibb.co.com/pjgnfm26/Whats-App-Image-2025-12-21-at-15-18-34-937867e5-removebg-preview.png'
               alt="Shuvo Mallik" 
               style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
               className="w-full h-full object-contain transition-transform duration-700 pointer-events-none"

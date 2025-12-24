@@ -33,7 +33,7 @@ const Loader = ({ onLoadingComplete }) => {
         y: '-100%',
         transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
       }}
-      className="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center overflow-hidden px-4"
     >
       {/* Background Decorative Element */}
       <motion.div 
@@ -42,24 +42,24 @@ const Loader = ({ onLoadingComplete }) => {
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"
+        className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-accent/10 rounded-full blur-[120px]"
       />
 
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 text-center w-full max-w-md">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
-          <h2 className="text-xl md:text-2xl font-black text-white tracking-[0.5em] uppercase font-display">
+          <h2 className="text-sm md:text-xl lg:text-2xl font-black text-white tracking-[0.3em] md:tracking-[0.5em] uppercase font-display">
             SHUVO MALLIK<span className="text-accent">.</span>
           </h2>
         </motion.div>
 
-        <div className="overflow-hidden h-[12vw] md:h-[8vw] flex items-center justify-center">
+        <div className="overflow-hidden h-[20vw] sm:h-[15vw] md:h-[10vw] lg:h-[8vw] flex items-center justify-center">
           <motion.span 
-            className="text-[12vw] md:text-[8vw] font-black text-white leading-none tracking-tighter font-display"
+            className="text-[20vw] sm:text-[15vw] md:text-[10vw] lg:text-[8vw] font-black text-white leading-none tracking-tighter font-display"
           >
             {Math.round(count)}%
           </motion.span>
@@ -68,7 +68,7 @@ const Loader = ({ onLoadingComplete }) => {
         <motion.div 
           initial={{ width: 0 }}
           animate={{ width: `${count}%` }}
-          className="h-[2px] bg-accent mt-8 mx-auto"
+          className="h-[2px] bg-accent mt-6 md:mt-8 mx-auto"
           style={{ maxWidth: '300px' }}
         />
       </div>

@@ -70,7 +70,7 @@ body {
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4 {

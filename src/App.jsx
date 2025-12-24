@@ -20,12 +20,13 @@ function App() {
 
   React.useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.08,
+      duration: 1.5,
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 2,
       normalizeWheel: true,
+      infinite: false,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 

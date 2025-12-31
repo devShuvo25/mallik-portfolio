@@ -4,7 +4,7 @@ import { Mail, Linkedin, Github, Send, Globe } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section-padding py-20 md:py-40 overflow-hidden" style={{ borderTop: '1px solid var(--border-color)', backgroundColor: 'var(--bg-secondary)' }}>
+    <section id="contact" className="section-padding py-20 md:py-40 overflow-hidden" style={{ borderTop: '1px solid var(--border-color)', backgroundColor: 'var(--bg-primary)' }}>
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -32,15 +32,6 @@ const Contact = () => {
                   href={item.href}
                   target={item.label === 'EMAIL' ? '_self' : '_blank'}
                   rel="noopener noreferrer"
-                  animate={{
-                    y: [0, -5, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.4
-                  }}
                   className="flex items-center gap-4 md:gap-8 group cursor-pointer"
                 >
                   <div className="text-accent group-hover:scale-125 transition-transform shrink-0">
@@ -77,18 +68,10 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          animate={{
-            y: [0, -15, 0],
-          }}
-          transition={{ 
-            y: {
-              duration: 12, // Very slow, luxurious float
-              repeat: Infinity,
-              ease: [0.45, 0, 0.55, 1],
-            },
-            opacity: { duration: 1.2 },
-            scale: { duration: 1.2 }
-          }}
+           transition={{ 
+             opacity: { duration: 1.2 },
+             scale: { duration: 1.2 }
+           }}
           viewport={{ once: true }}
           className="p-8 md:p-20 shadow-none"
           style={{
@@ -127,10 +110,6 @@ const Contact = () => {
               ></textarea>
             </div>
             <motion.button 
-              animate={{ 
-                boxShadow: ["0 0 0 0px rgba(0, 242, 255, 0)", "0 0 0 10px rgba(0, 242, 255, 0.1)", "0 0 0 0px rgba(0, 242, 255, 0)"] 
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
               className="btn-premium w-full mt-8 md:mt-12 hover:scale-[1.02] active:scale-95 transition-all"
             >
               SEND MESSAGE

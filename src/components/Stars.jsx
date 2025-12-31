@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 
 const Stars = () => {
-  const { theme } = useTheme();
   
   // Generate random stars with different sizes and positions
   const stars = [...Array(20)].map((_, i) => ({
@@ -16,7 +14,6 @@ const Stars = () => {
   }));
 
   // Only show stars in dark mode
-  if (theme !== 'dark') return null;
 
   return (
     <AnimatePresence>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
+
 
 import logo from '../assets/logo.png';
 
@@ -71,12 +71,12 @@ const Navbar = ({ show }) => {
               {link.name}
             </motion.a>
           ))}
-          <ThemeToggle />
+          
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle />
+          
           <button onClick={() => setIsOpen(!isOpen)} style={{ color: 'var(--text-primary)' }}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

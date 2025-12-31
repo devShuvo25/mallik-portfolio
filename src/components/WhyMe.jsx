@@ -43,16 +43,7 @@ const WhyMe = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              animate={{
-                y: [0, -15, 0],
-              }}
               transition={{ 
-                y: {
-                  duration: 8, // Doubled duration for maximum smoothness
-                  repeat: Infinity,
-                  ease: [0.45, 0, 0.55, 1],
-                  delay: idx * 0.4 // More spread out stagger
-                },
                 opacity: { duration: 1, delay: idx * 0.15 },
                 x: { duration: 1, delay: idx * 0.15 }
               }}

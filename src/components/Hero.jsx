@@ -45,45 +45,12 @@ const Hero = ({ show }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 lg:py-0"
       onMouseMove={handleMouseMove}
     >
-      {/* Background Particles */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ 
-              opacity: Math.random() * 0.5, 
-              x: Math.random() * 100 + "%", 
-              y: "110%"
-            }}
-            animate={show ? { 
-              y: "-10%",
-              x: [null, (Math.random() - 0.5) * 200 + "%"],
-              opacity: [0, 0.5, 0]
-            } : {}}
-            transition={{ 
-              duration: Math.random() * 20 + 20, 
-              repeat: Infinity, 
-              ease: "linear" 
-            }}
-            className="absolute w-1 h-1 bg-accent rounded-full blur-[1px]"
-          />
-        ))}
-      </div>
 
       <div className="section-padding relative z-10 grid lg:grid-cols-2 gap-20 lg:gap-32 items-center w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={show ? "visible" : "hidden"}
-          style={{ y: [0, -15, 0] }}
-          transition={{
-            y: {
-              duration: 8,
-              repeat: Infinity,
-              ease: [0.45, 0, 0.55, 1],
-            },
-            ...containerVariants.visible.transition
-          }}
           className="text-center lg:text-left"
         >
           <motion.span 
@@ -120,10 +87,6 @@ const Hero = ({ show }) => {
             <Magnetic strength={0.2}>
               <motion.a 
                 href="#projects" 
-                animate={{ 
-                  boxShadow: ["0 0 0 0px rgba(0, 242, 255, 0)", "0 0 0 15px rgba(0, 242, 255, 0.05)", "0 0 0 0px rgba(0, 242, 255, 0)"] 
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="px-8 py-5 bg-white text-black rounded-full font-bold text-base transition-all transform hover:bg-accent hover:text-black active:scale-95 shadow-2xl flex items-center gap-2 w-full sm:w-auto justify-center tracking-normal"
               >
                 PROJECTS
@@ -184,30 +147,6 @@ const Hero = ({ show }) => {
             />
           </div>
           {/* Decorative Elements */}
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.15, 1],
-              opacity: [0.05, 0.1, 0.05],
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-[120px] pointer-events-none" 
-          />
-          <motion.div 
-            animate={{ 
-              x: [mousePosition.x * 2, mousePosition.x * 2 + 30, mousePosition.x * 2],
-              y: [mousePosition.y * 2, mousePosition.y * 2 - 30, mousePosition.y * 2]
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl" 
-          />
-          <motion.div 
-            animate={{ 
-              x: [-mousePosition.x * 1.5, -mousePosition.x * 1.5 - 40, -mousePosition.x * 1.5],
-              y: [-mousePosition.y * 1.5, -mousePosition.y * 1.5 + 40, -mousePosition.y * 1.5]
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-10 -left-10 w-60 h-60 bg-primary-600/10 rounded-full blur-3xl" 
-          />
         </motion.div>
       </div>
 

@@ -63,16 +63,7 @@ const About = () => {
                key={idx} 
                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-               animate={{
-                 y: [0, -15, 0],
-               }}
                transition={{ 
-                 y: {
-                   duration: 8 + idx, // Increased for a slower, breathable feel
-                   repeat: Infinity,
-                   ease: [0.45, 0, 0.55, 1],
-                   delay: idx * 0.4
-                 },
                  opacity: { duration: 1, delay: idx * 0.15 },
                  filter: { duration: 1, delay: idx * 0.15 }
                }}

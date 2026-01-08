@@ -96,7 +96,7 @@ const Hero = ({ show }) => {
             
             <Magnetic strength={0.3}>
               <a 
-                href="https://drive.google.com/file/d/1skRkwiRIw-UZcK8Quc59kwqYcZL4OE8h/view?usp=drive_link" 
+                href="https://drive.google.com/file/d/170hHsvZWL-kB9iPVaZutVCikRwpNTmVk/view?usp=drive_link"
                 download 
                 className="px-8 py-5 rounded-full text-xs font-black tracking-[0.2em] uppercase transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
                 style={{

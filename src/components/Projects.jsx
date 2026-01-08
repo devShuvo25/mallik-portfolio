@@ -3,16 +3,25 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
+import project3 from '../assets/dailyzone.png'
 import Magnetic from './Magnetic';
 import { cn } from '../lib/utils';
 
 const projects = [
   {
-    title: 'LOCAL CHEF BAZAAR',
+    title: 'THE DAILY DISH',
     description: 'A PREMIUM MARKETPLACE FOR HOME-COOKED MEALS WITH REAL-TIME PRE-ORDERING AND STRIPE SECURE PAYMENTS.',
-    tech: ['MERN', 'STRIPE', 'FIREBASE'],
+    tech: ['REACT', 'NODE.JS', "MONGODB", 'GSAP', 'FIREBASE', 'STRIPE'],
     image: project1,
-    live: '#',
+    live: 'https://the-daily-dish.netlify.app/',
+    github: '#',
+  },
+  {
+    title: 'DAILY ZONE',
+    description: "A modern full-stack web application that helps users track and manage daily tasks, habits, and productivity in an intuitive interface.",
+    tech: ["REACT", "NODE.JS", "MONGODB", 'GSAP', 'FIREBASE'],
+    image: project3,
+    live: 'https://dailyzone.netlify.app',
     github: '#',
   },
   {
@@ -109,7 +118,7 @@ const Projects = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-10">
-              <div className="flex gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {project.tech.map((t) => (
                   <span key={t} className="text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full group-hover:border-accent/20 group-hover:text-accent transition-all duration-500" style={{ color: 'var(--text-tertiary)', backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}>
                     {t}

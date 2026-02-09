@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Download } from 'lucide-react';
-import hero from '../assets/hero-removebg-preview (2).png'
+import hero from '../assets/WhatsApp Image 2026-01-21 at 9.59.32 PM.jpeg'
 import Magnetic from './Magnetic';
 
 const Hero = ({ show }) => {
@@ -140,7 +140,8 @@ const Hero = ({ show }) => {
             }}
           >
             <motion.img 
-              src='https://i.ibb.co.com/pjgnfm26/Whats-App-Image-2025-12-21-at-15-18-34-937867e5-removebg-preview.png'
+              src={hero}
+              // src='https://i.ibb.co.com/pjgnfm26/Whats-App-Image-2025-12-21-at-15-18-34-937867e5-removebg-preview.png'
               alt="Shuvo Mallik" 
               // style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
               className="w-full h-full object-contain transition-transform duration-700 pointer-events-none"

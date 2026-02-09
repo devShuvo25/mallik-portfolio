@@ -14,6 +14,7 @@ import Stars from './components/Stars';
 
 import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
+import Experience from './components/Experience';
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -55,6 +56,7 @@ function App() {
         <Hero show={!isLoading} />
         <About />
         <Skills />
+        <Experience/>
         <Projects />
         <WhyMe />
         <Contact />

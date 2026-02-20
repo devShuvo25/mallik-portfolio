@@ -1,14 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Globe } from 'lucide-react';
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: <Github size={18} />, href: "https://github.com" },
-    { icon: <Linkedin size={18} />, href: "https://linkedin.com" },
-    { icon: <Twitter size={18} />, href: "https://twitter.com" },
-    { icon: <Mail size={18} />, href: "mailto:shuvo@example.com" },
-  ];
+const socialLinks = [
+  { icon: <Github size={18} />, href: "https://github.com/devShuvo25" },
+  { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/shuvo-mallik" },
+  { icon: <Twitter size={18} />, href: "https://x.com/devShuvo25" },
+  // Fiverr Link
+  { icon: <Globe size={18} />, href: "https://www.fiverr.com/s/VYEojQ5" }, 
+  // Upwork Link
+  { icon: <ExternalLink size={18} />, href: "https://www.upwork.com/freelancers/~019f0781b855f224b3" }, 
+  { icon: <Mail size={18} />, href: "mailto:shuvomallik999@gmail.com" },
+];
 
   return (
     <footer className="py-12" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>

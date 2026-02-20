@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Download } from 'lucide-react';
-import hero from '../assets/WhatsApp Image 2026-01-21 at 9.59.32 PM.jpeg'
+import hero from '../assets/Gemini_Generated_Image_e758fre758fre758-removebg-preview.png'
 import Magnetic from './Magnetic';
 
 const Hero = ({ show }) => {
@@ -96,7 +96,7 @@ const Hero = ({ show }) => {
             
             <Magnetic strength={0.3}>
               <a 
-                href="https://drive.google.com/file/d/170hHsvZWL-kB9iPVaZutVCikRwpNTmVk/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1MAjRBuMfDe5udRvMf0ZuLhBE1ymdnssf/view?usp=sharing"
                 download 
                 className="px-8 py-5 rounded-full text-xs font-black tracking-[0.2em] uppercase transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
                 style={{
@@ -144,7 +144,7 @@ const Hero = ({ show }) => {
               // src='https://i.ibb.co.com/pjgnfm26/Whats-App-Image-2025-12-21-at-15-18-34-937867e5-removebg-preview.png'
               alt="Shuvo Mallik" 
               // style={{ scale: 1.2, x: -mousePosition.x / 2, y: -mousePosition.y / 2 }}
-              className="w-full h-full object-contain transition-transform duration-700 pointer-events-none"
+              className="w-full  h-full object-contain transition-transform duration-700 pointer-events-none"
             />
           </div>
           {/* Decorative Elements */}

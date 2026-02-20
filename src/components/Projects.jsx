@@ -4,10 +4,19 @@ import { ExternalLink, Github } from 'lucide-react';
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
 import project3 from '../assets/dailyzone.png'
+import project4 from '../assets/Screenshot_20-2-2026_17456_ecommerce-frontend-tau-lemon.vercel.app.jpeg'
 import Magnetic from './Magnetic';
 import { cn } from '../lib/utils';
 
 const projects = [
+{
+  title: 'ELITE-EASE',
+  description: 'A NEXT-GENERATION TECH RETAIL HUB FEATURING DYNAMIC PRODUCT FILTERING, 3D PREVIEWS, AND AN OPTIMIZED CHECKOUT PIPELINE.',
+  tech: ['NEXT.JS', 'TYPESCRIPT', 'TAILWIND', 'REDUX', 'EXPRESS', 'NODE.JS', 'PRISMA', 'POSTGRESQL'],
+  image: project4, // Replace with your asset
+  live: 'https://ecommerce-frontend-tau-lemon.vercel.app',
+  github: 'https://github.com/devShuvo25/EliteEase---Tech-E-Commerce-Website-Back-end',
+},
   {
     title: 'THE DAILY DISH',
     description: 'A PREMIUM MARKETPLACE FOR HOME-COOKED MEALS WITH REAL-TIME PRE-ORDERING AND STRIPE SECURE PAYMENTS.',

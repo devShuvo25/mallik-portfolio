@@ -15,6 +15,7 @@ import Stars from './components/Stars';
 import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
 import Experience from './components/Experience';
+import Achievements from './components/Achivements';
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -58,6 +59,7 @@ function App() {
         <Skills />
         <Experience/>
         <Projects />
+        <Achievements/>
         <WhyMe />
         <Contact />
       </main>

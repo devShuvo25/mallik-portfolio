@@ -54,7 +54,7 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="section-padding py-24 md:py-32" style={{ borderTop: '1px solid var(--border-color)' }}>
+    <section id="projects" className="section-padding " style={{ borderTop: '1px solid var(--border-color)' }}>
       <div className="mb-16 md:mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,9 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         <AnimatePresence mode="popLayout">
-          {visibleProjects?.map((project, idx) => (
+          {visibleProjects?.map((project) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               layout
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
